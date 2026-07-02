@@ -32,6 +32,17 @@ player_speed = 5
 WALL_THICKNESS = 40
 
 WALL_COLOR = (60, 52, 40)
+# ==========================
+# Door Settings
+# ==========================
+
+DOOR_WIDTH = 80
+DOOR_HEIGHT = WALL_THICKNESS
+
+door_x = WIDTH // 2 - DOOR_WIDTH // 2
+door_y = 0
+
+DOOR_COLOR = (110, 70, 25)
 
 # ==========================
 # Game Loop
@@ -120,6 +131,20 @@ while running:
         screen,
         WALL_COLOR,
         (WIDTH - WALL_THICKNESS, 0, WALL_THICKNESS, HEIGHT)
+    )
+    # ==========================
+    # Draw Exit Door
+    # ==========================
+
+    pygame.draw.rect(
+        screen,
+        DOOR_COLOR,
+        (
+            door_x,
+            door_y,
+            DOOR_WIDTH,
+            DOOR_HEIGHT
+        )
     )
     # ==========================
     # Draw Player
